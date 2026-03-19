@@ -1,7 +1,7 @@
 ---
 include:
   # Dongle (central) - Nordic nRF52840 Dongle PCA10059
-  - board: nrf52840dongle/nrf52840
+  - board: nrf52840dongle_nrf52840
     shield: lily58_dongle
     artifact-name: lily58_dongle
 
@@ -18,7 +18,7 @@ include:
     artifact-name: lily58_right
 
   # Settings reset firmware (flash on all devices before first use)
-  - board: nrf52840dongle/nrf52840
+  - board: nrf52840dongle_nrf52840
     shield: settings_reset
     artifact-name: settings_reset_dongle
 
