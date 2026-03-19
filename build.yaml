@@ -3,11 +3,18 @@ include:
   # Dongle (central) - Nordic nRF52840 Dongle PCA10059
   - board: nrf52840dongle_nrf52840
     shield: lily58_dongle
+    cmake-args: -DCONFIG_BUILD_OUTPUT_UF2=y
     artifact-name: lily58_dongle
 
-  # Left half (peripheral) - dedicated shield avoids lily58_left's default central role
+  # Dongle (central) - alternative: nice!nano v2 as dongle
   - board: nice_nano_v2
-    shield: lily58_left_peripheral
+    shield: lily58_dongle
+    artifact-name: lily58_dongle_nicenano
+
+  # Left half (peripheral)
+  - board: nice_nano_v2
+    shield: lily58_left
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
     artifact-name: lily58_left
 
   # Right half (peripheral)
@@ -16,7 +23,7 @@ include:
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
     artifact-name: lily58_right
 
-  # Settings reset firmware (flash on all devices before first use)
+  # Settings reset
   - board: nrf52840dongle_nrf52840
     shield: settings_reset
     cmake-args: -DCONFIG_BUILD_OUTPUT_UF2=y
@@ -24,4 +31,4 @@ include:
 
   - board: nice_nano_v2
     shield: settings_reset
-    artifact-name: settings_reset_nice_nano
+    artifact-name: settings_reset_nicenano
