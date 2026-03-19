@@ -20,6 +20,7 @@ include:
   # Settings reset firmware (flash on all devices before first use)
   - board: nrf52840dongle_nrf52840
     shield: settings_reset
+    cmake-args: -DCONFIG_BUILD_OUTPUT_UF2=y
     artifact-name: settings_reset_dongle
 
   - board: nice_nano_v2
